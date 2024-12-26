@@ -51,7 +51,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get('http://localhost:3000/api/v2/getalltasks', { headers })
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v2/getalltasks`, { headers })
       setData(res.data.data);
     }
     if (localStorage.getItem("id") && localStorage.getItem("token")) {

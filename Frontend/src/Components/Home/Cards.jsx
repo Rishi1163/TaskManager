@@ -14,7 +14,7 @@ const Cards = ({ home, setInputDiv, data = [], setUpdatedData }) => {
 
     const handleComplete = async (id) => {
         try {
-            const res = await axios.put(`http://localhost:3000/api/v2/updatecomptask/${id}`, {}, { headers });
+            const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/v2/updatecomptask/${id}`, {}, { headers });
             console.log(res);
         } catch (error) {
             console.error('Error updating task completion status:', error);
@@ -23,7 +23,7 @@ const Cards = ({ home, setInputDiv, data = [], setUpdatedData }) => {
 
     const handleImpTask = async (id) => {
         try {
-            const res = await axios.put(`http://localhost:3000/api/v2/updateimptask/${id}`, {}, { headers });
+            const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/v2/updateimptask/${id}`, {}, { headers });
             console.log(res);
         } catch (error) {
             console.error('Error updating task importance:', error);
@@ -32,7 +32,7 @@ const Cards = ({ home, setInputDiv, data = [], setUpdatedData }) => {
 
     const handleDelete = async (id) => {
         try {
-            const res = await axios.delete(`http://localhost:3000/api/v2/deletetask/${id}`, { headers });
+            const res = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/v2/deletetask/${id}`, { headers });
             console.log(res);
         } catch (error) {
             console.error('Error deleting task:', error);

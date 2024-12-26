@@ -12,7 +12,7 @@ const Imptasks = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/v2/getimptasks', { headers });
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v2/getimptasks`, { headers });
         setData(res.data.data );
         console.log(res.data.data);
         

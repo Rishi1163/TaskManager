@@ -26,7 +26,7 @@ const Login = () => {
       if (data.username === "" || data.password === "") {
         alert("All fields are required");
       } else {
-        const res = await axios.post('http://localhost:3000/api/v1/login', data);
+        const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/login`, data);
         setData({ username: "", password: "" });
         localStorage.setItem("id",res.data.id)
         localStorage.setItem("token",res.data.token)
