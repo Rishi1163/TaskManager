@@ -23,7 +23,7 @@ const InputData = ({ inputDiv, setInputDiv, updatedData, setUpdatedData }) => {
             if (data.title === '' || data.desc === '') {
                 alert("All fields are required!")
             } else {
-                await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v2/addtask`,
+                await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v2/addtask`,
                     data,
                     { headers })
                 setData({ title: '', desc: '' })
